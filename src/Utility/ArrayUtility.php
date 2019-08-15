@@ -9,15 +9,11 @@ use RecursiveIteratorIterator;
 
 final class ArrayUtility
 {
-    public static function flatten(array $arrayToFlatten): string
+    public static function flatten(array $arrayToFlatten): array
     {
-         return
-             implode(
-                 ', ' ,
-                 iterator_to_array(
-                     new RecursiveIteratorIterator(new RecursiveArrayIterator($arrayToFlatten)),
-                     false
-                 )
-             );
+         return iterator_to_array(
+                 new RecursiveIteratorIterator(new RecursiveArrayIterator($arrayToFlatten)),
+                 false
+         );
     }
 }

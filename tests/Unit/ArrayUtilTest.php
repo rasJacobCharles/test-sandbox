@@ -15,7 +15,7 @@ class ArrayUtilTest extends TestCase
     {
         $arrayToFlatten = [1, 2, [3, 4, [5, 6, 7], 8], 9];
         $result = ArrayUtility::flatten($arrayToFlatten);
-        $this->assertTrue(is_string($result));
-        $this->assertSame('1, 2, 3, 4, 5, 6, 7, 8, 9', $result);
+        $this->assertTrue(is_array($result));
+        $this->assertSame([1, 2, 3, 4, 5, 6, 7, 8, 9], $result);
     }
 }
